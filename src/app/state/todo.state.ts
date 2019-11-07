@@ -9,17 +9,7 @@ export class TodoStateModel {
 @State<TodoStateModel>({
   name: 'todos',
   defaults: {
-    todos: [
-      {
-        name: 'todo'
-      }, {
-        name: 'todo 2'
-      }, {
-        name: 'todo 3'
-      }, {
-        name: 'todo 4'
-      }
-    ]
+    todos: []
   }
 })
 
@@ -42,10 +32,10 @@ export class TodoState {
   @Action(RemoveTodo)
   removeTodo({ getState, patchState }: StateContext<TodoStateModel>, { payload }: RemoveTodo) {
     const state = getState();
-    console.log('payload', payload);
-    console.log('splice', state.todos.splice(payload, 1));
+    state.todos.splice(payload, 1);
+
     patchState({
-      todos: [...state.todos.splice(payload, 1)]
+      todos: [...state.todos]
     })
   }
 
