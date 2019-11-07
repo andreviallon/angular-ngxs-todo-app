@@ -1,39 +1,14 @@
 <div class="todos-list container is-fluid">
-  <form #todo="ngForm" (ngSubmit)="addTodo(todo)">
+  <form #todo="ngForm" (ngSubmit)="addTodo(name.value)">
     <div class="columns">
         <div class="column">
           <div class="field">
             <label class="label">Todo</label>
             <div class="control">
-              <input #todoName name="todoName" class="input" type="text" [(ngModel)]="todo.name"/>
+              <input #name name="name" class="input" type="text" [(ngModel)]="todo.name"/>
             </div>
           </div>
         </div>
-
-        <div class="column">
-          <div class="field">
-            <label class="label">Category</label>
-            <div class="control">
-              <input #todoCategory name="todoCategory" class="input" type="text" [(ngModel)]="todo.category"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="field">
-            <label class="label">Priority</label>
-            <div class="control">
-              <div class="select">
-                <select #todoPriority name="todoPriority" [(ngModel)]="todo.priority">
-                  <option>Small</option>
-                  <option>Medium</option>
-                  <option>Strong</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="column is-2">
           <div class="field">
             <button class="button is-link is-pulled-right">Add Todo</button>

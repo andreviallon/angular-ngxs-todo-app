@@ -1,5 +1,5 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';;
-import { Todo, PriorityEmun } from './../models/todo.model';
+import { Todo } from './../models/todo.model';
 import { AddTodo, RemoveTodo } from '../actions/todo.actions';
 
 export class TodoStateModel {
@@ -11,9 +11,13 @@ export class TodoStateModel {
   defaults: {
     todos: [
       {
-        name: 'todo',
-        category: 'home',
-        priority: PriorityEmun.SMALL
+        name: 'todo'
+      }, {
+        name: 'todo 2'
+      }, {
+        name: 'todo 3'
+      }, {
+        name: 'todo 4'
       }
     ]
   }
@@ -27,16 +31,21 @@ export class TodoState {
   }
 
   @Action(AddTodo)
-  addTodo({ getState, patchState }: StateContext<TodoStateModel>, { payload }: AddTodo) {
+  add({ getState, patchState }: StateContext<TodoStateModel>, { payload }: AddTodo) {
+    const state = getState();
+    console.log('payload', payload);
     patchState({
-      todos: [...getState().todos, payload]
+      todos: [...state.todos, payload]
     })
   }
 
-  @Action(AddTodo)
+  @Action(RemoveTodo)
   removeTodo({ getState, patchState }: StateContext<TodoStateModel>, { payload }: RemoveTodo) {
+    const state = getState();
+    console.log('payload', payload);
+    console.log('splice', state.todos.splice(payload, 1));
     patchState({
-      todos: [...getState().todos.splice(payload, 1)]
+      todos: [...state.todos.splice(payload, 1)]
     })
   }
 

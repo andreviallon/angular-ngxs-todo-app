@@ -1,5 +1,9 @@
-import { PriorityEmun } from './../models/todo.model';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Store, Select } from '@ngxs/store';
+import { Todo } from './../models/todo.model'
+import { TodoState } from './../state/todo.state'
+import { RemoveTodo } from './../actions/todo.actions'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'todos-list',
@@ -8,24 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosListComponent {
 
-  todos = [
-    {
-      name: 'Todo',
-      category: 'Cartegory',
-      priority: 'Small'
-    },
-    {
-      name: 'Todo',
-      category: 'Cartegory',
-      priority: 'Small'
-    },
-    {
-      name: 'Todo',
-      category: 'Cartegory',
-      priority: 'Small'
-    }
-  ]
+  @Select(TodoState.getTodos) todos$: Observable<Todo>
 
-  constructor() { }
+  constructor(private store: Store) {
+  }
+
+  removeTodo(i: number) {
+    this.store.dispatch(new RemoveTodo(i));
+  }
 
 }
