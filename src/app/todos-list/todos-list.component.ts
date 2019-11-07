@@ -1,3 +1,4 @@
+import { PriorityEmun } from './../models/todo.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './todos-list.component.html',
   styleUrls: ['./todos-list.component.scss']
 })
-export class TodosListComponent implements OnInit {
+export class TodosListComponent {
 
   todos = [
     {
@@ -26,8 +27,5 @@ export class TodosListComponent implements OnInit {
   ]
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
