@@ -7,6 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosListComponent implements OnInit {
 
+  todos = [
+    {
+      name: 'Todo',
+      category: 'Cartegory',
+      priority: 'Small'
+    },
+    {
+      name: 'Todo',
+      category: 'Cartegory',
+      priority: 'Small'
+    },
+    {
+      name: 'Todo',
+      category: 'Cartegory',
+      priority: 'Small'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit() {
