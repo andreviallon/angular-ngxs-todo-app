@@ -23,7 +23,7 @@ export class TodoState {
   @Action(AddTodo)
   add({ getState, patchState }: StateContext<TodoStateModel>, { payload }: AddTodo) {
     const state = getState();
-    console.log('payload', payload);
+
     patchState({
       todos: [...state.todos, payload]
     })
