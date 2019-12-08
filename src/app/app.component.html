@@ -8,5 +8,5 @@
 </div>
 <div class="container full-screen">
   <add-todo></add-todo>
-  <todos-list></todos-list>
+  <todos-list [todos$]="todos$" (onRemoveTodo)="onRemoveTodo($event)"></todos-list>
 </div>

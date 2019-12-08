@@ -1,8 +1,5 @@
-import { Component } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from './../models/todo.model'
-import { TodoState } from './../state/todo.state'
-import { RemoveTodo } from './../actions/todo.actions'
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,13 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class TodosListComponent {
 
-  @Select(TodoState.getTodos) todos$: Observable<Todo>
+  @Input() todos$: Observable<Todo>
 
-  constructor(private store: Store) {
-  }
+  @Output() onRemoveTodo = new EventEmitter<number>();
 
   removeTodo(i: number) {
-    this.store.dispatch(new RemoveTodo(i));
+    this.onRemoveTodo.emit(i);
   }
-
 }
