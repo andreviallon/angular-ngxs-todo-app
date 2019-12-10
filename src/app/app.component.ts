@@ -3,7 +3,7 @@ import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { TodoState } from './state/todo.state';
 import { Todo } from './models/todo.model';
-import { RemoveTodo } from './actions/todo.actions';
+import { AddTodo, RemoveTodo } from './actions/todo.actions';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,10 @@ export class AppComponent {
   @Select(TodoState.getTodos) todos$: Observable<Todo>
 
   constructor(private store: Store) { }
+
+  onAddTodo(todo: string) {
+    this.store.dispatch(new AddTodo({ name: todo }))
+  }
 
   onRemoveTodo(i: number) {
     this.store.dispatch(new RemoveTodo(i));

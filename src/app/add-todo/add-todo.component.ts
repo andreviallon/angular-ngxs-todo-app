@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngxs/store';
-import { AddTodo } from './../actions/todo.actions';
+import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'add-todo',
@@ -9,10 +7,11 @@ import { AddTodo } from './../actions/todo.actions';
 })
 export class AddTodoComponent {
 
-  constructor(private store: Store) { }
+  @ViewChild('name', { static: false }) name: ElementRef;
+
+  @Output() onAddTodo = new EventEmitter<string>();
 
   addTodo(todo: string) {
-    this.store.dispatch(new AddTodo({ name: todo }))
+    this.onAddTodo.emit(todo);
   }
-
 }

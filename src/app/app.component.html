@@ -7,6 +7,6 @@
   </div>
 </div>
 <div class="container full-screen">
-  <add-todo></add-todo>
+  <add-todo (onAddTodo)="onAddTodo($event)"></add-todo>
   <todos-list [todos$]="todos$" (onRemoveTodo)="onRemoveTodo($event)"></todos-list>
 </div>
