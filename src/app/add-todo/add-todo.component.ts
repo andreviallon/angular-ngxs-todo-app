@@ -13,5 +13,6 @@ export class AddTodoComponent {
 
   addTodo(todo: string) {
     this.onAddTodo.emit(todo);
+    this.name.nativeElement.value = '';
   }
 }
