@@ -13,7 +13,7 @@ export class TodosListComponent {
 
   @Output() onRemoveTodo = new EventEmitter<number>();
 
-  removeTodo(i: number) {
+  removeTodo(i: number): void {
     this.onRemoveTodo.emit(i);
   }
 }

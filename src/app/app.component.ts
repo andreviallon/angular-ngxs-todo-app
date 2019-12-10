@@ -17,6 +17,10 @@ export class AppComponent {
   constructor(private store: Store) { }
 
   onAddTodo(todo: string) {
+    if (todo.trim() === '') {
+      return;
+    }
+
     this.store.dispatch(new AddTodo({ name: todo }))
   }
 

@@ -1,6 +1,7 @@
 <div class="container is-fluid">
   <div class="table-container">
-    <table class="table is-fullwidth">
+
+    <table  *ngIf="(todos$ | async).length" class="table is-fullwidth">
       <thead>
         <tr>
           <th class="column is-four-fifth">Todo</th>
@@ -16,5 +17,8 @@
         </tr>
       </tbody>
     </table>
+
+    <h2 *ngIf="!(todos$ | async).length">You're all cleared up!</h2>
+
   </div>
 </div>
