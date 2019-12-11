@@ -11,7 +11,11 @@ export class AddTodoComponent {
 
   @Output() onAddTodo = new EventEmitter<string>();
 
-  addTodo(todo: string) {
+  addTodo(todo: string): void {
+    if (todo.trim() === '') {
+      return;
+    }
+
     this.onAddTodo.emit(todo);
     this.name.nativeElement.value = '';
   }

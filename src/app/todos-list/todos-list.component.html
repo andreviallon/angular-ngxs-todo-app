@@ -12,13 +12,13 @@
         <tr class="todo-row" *ngFor="let todo of (todos$ | async); let i = index">
           <td>{{ todo.name }}</td>
           <td>
-            <button class="button is-danger is-pulled-right" (click)="removeTodo(i)">Delete</button>
+            <button class="button is-danger is-light is-pulled-right" (click)="removeTodo(i)">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <h2 *ngIf="!(todos$ | async).length">You're all cleared up!</h2>
+    <h2 *ngIf="!(todos$ | async).length">You're all caught up!</h2>
 
   </div>
 </div>

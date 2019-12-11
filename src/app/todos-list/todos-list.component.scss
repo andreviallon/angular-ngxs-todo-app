@@ -2,10 +2,14 @@
   vertical-align: middle;
 }
 
+thead > tr :first-child {
+  margin-bottom: -1px;
+}
+
 h2 {
   margin-top: 3rem;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   justify-content: center;
 }

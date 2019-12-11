@@ -15,18 +15,23 @@ export const defaultTodos = [
   'Todo 3'
 ];
 
+export const props = {
+  todos$: defaultTodos,
+  onRemoveTodo: action('Remove Todo')
+}
+
 storiesOf('TodosList', module)
   .addDecorator(
     moduleMetadata({
       declarations: [TodosListComponent]
     })
-  ).add('with Todos', createComponent({
-    todos$: [
-      ...defaultTodos
-    ],
-    onRemoveTodo: action('Remove Todo'),
-  }))
-  .add('without Todos', createComponent({}))
-  .add('loading Todos', createComponent({
-
-  }))
+  )
+  // .add('with Todos', createComponent({
+  //   todos$: defaultTodos
+  // }))
+  .add('with Todos', () => {
+    return {
+      template: `<todos-list [todos$]="todos" (onRemoveTodo)="onRemoveTodo($event)"></todos-list>`,
+      props
+    };
+  });

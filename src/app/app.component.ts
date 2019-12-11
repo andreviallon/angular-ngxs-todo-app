@@ -16,16 +16,11 @@ export class AppComponent {
 
   constructor(private store: Store) { }
 
-  onAddTodo(todo: string) {
-    if (todo.trim() === '') {
-      return;
-    }
-
+  onAddTodo(todo: string): void {
     this.store.dispatch(new AddTodo({ name: todo }))
   }
 
-  onRemoveTodo(i: number) {
+  onRemoveTodo(i: number): void {
     this.store.dispatch(new RemoveTodo(i));
   }
-
 }
