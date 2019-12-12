@@ -1,7 +1,7 @@
 <div class="todos-list container is-fluid">
   <form #todo="ngForm" (ngSubmit)="addTodo(name.value)">
     <div class="columns">
-        <div class="column">
+        <div class="todo-input-container">
           <div class="field">
             <label class="label">Todo</label>
             <div class="control">
@@ -9,10 +9,8 @@
             </div>
           </div>
         </div>
-        <div class="column is-2">
-          <div class="field">
-            <button class="button is-link is-pulled-right">Add Todo</button>
-          </div>
+        <div class="field">
+          <button class="button is-link is-pulled-right">Add Todo</button>
         </div>
     </div>
   </form>
