@@ -14,8 +14,8 @@ export const props = {
   onRemoveTodo: action('Remove Todo')
 }
 
-export const withoutTodos = {
-  todos$: new Observable(observer => { observer.next([]) })
+export const withOutTodos = {
+  todos$: new Observable(observer => { observer.next([]) }),
 }
 
 storiesOf('TodosList', module)
@@ -37,6 +37,8 @@ storiesOf('TodosList', module)
   .add('without Todos', () => {
     return {
       template: `<todos-list [todos$]="todos$" (onRemoveTodo)="onRemoveTodo($event)"></todos-list>`,
-      withoutTodos
+      props: {
+        ...withOutTodos
+      }
     }
   });
