@@ -10,7 +10,14 @@
       </thead>
       <tbody>
         <tr class="todo-row" *ngFor="let todo of (todos$ | async); let i = index">
-          <td>{{ todo.name }}</td>
+          <td>
+            <div>
+              <label class="checkbox">
+                <input #checked type="checkbox" (click)="checkTodo(i)" [checked]="todo.checked">
+                <p [ngClass]="{'isChecked': todo.checked}">{{ todo.name }}</p>
+              </label>
+            </div>
+          </td>
           <td>
             <button class="button is-danger is-light is-pulled-right" (click)="removeTodo(i)">Delete</button>
           </td>

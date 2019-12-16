@@ -11,3 +11,9 @@ export class RemoveTodo {
 
   constructor(public payload: number) { }
 }
+
+export class CheckTodo {
+  static readonly type = '[TODO] Check'
+
+  constructor(public payload: number) { }
+}

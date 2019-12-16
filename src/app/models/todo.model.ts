@@ -1,3 +1,5 @@
 export interface Todo {
-  name: string
+  name: string,
+  checked: boolean
 }
+

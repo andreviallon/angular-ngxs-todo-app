@@ -1,6 +1,6 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';;
 import { Todo } from './../models/todo.model';
-import { AddTodo, RemoveTodo } from '../actions/todo.actions';
+import { AddTodo, RemoveTodo, CheckTodo } from '../actions/todo.actions';
 
 export class TodoStateModel {
   todos: Todo[]
@@ -9,7 +9,20 @@ export class TodoStateModel {
 @State<TodoStateModel>({
   name: 'todos',
   defaults: {
-    todos: []
+    todos: [
+      {
+        name: 'Todo 1',
+        checked: false
+      },
+      {
+        name: 'Todo 2',
+        checked: true
+      },
+      {
+        name: 'Todo 3',
+        checked: false
+      }
+    ]
   }
 })
 
@@ -33,6 +46,16 @@ export class TodoState {
   removeTodo({ getState, patchState }: StateContext<TodoStateModel>, { payload }: RemoveTodo) {
     const state = getState();
     state.todos.splice(payload, 1);
+
+    patchState({
+      todos: [...state.todos]
+    })
+  }
+
+  @Action(CheckTodo)
+  checkTodo({ getState, patchState }: StateContext<TodoStateModel>, { payload }: CheckTodo) {
+    const state = getState();
+    state.todos[payload].checked = !state.todos[payload].checked;
 
     patchState({
       todos: [...state.todos]
