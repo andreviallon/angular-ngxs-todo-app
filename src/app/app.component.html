@@ -1,12 +1,4 @@
-<div class="hero is-link">
-  <div class="hero-body">
-      <div class="container is-fluid">
-          <h1 class="title">Todo App</h1>
-          <h2 class="subtitle">Angular / NGXS /Storybook</h2>
-      </div>
-  </div>
-</div>
+<header></header>
 <div class="container full-screen">
-  <add-todo (onAddTodo)="onAddTodo($event)"></add-todo>
-  <todos-list [todos$]="todos$" (onCheckTodo)="onCheckTodo($event)" (onRemoveTodo)="onRemoveTodo($event)"></todos-list>
+  <router-outlet></router-outlet>
 </div>

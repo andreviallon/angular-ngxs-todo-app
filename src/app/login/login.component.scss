@@ -1,0 +1,23 @@
+.box {
+  margin-top: 2rem;
+}
+
+.title.is-3 {
+  text-align: center;
+  margin: 5rem 0 3rem;
+}
+
+.login-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  a {
+    padding-top: 0.5rem;
+  }
+}
+
+a:hover {
+  color: #276cda;
+}

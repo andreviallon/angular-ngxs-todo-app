@@ -1,0 +1,20 @@
+<div class="columns">
+  <div class="column is-half is-offset-one-quarter">
+    <h3 class="title is-3">Login</h3>
+    <div class="field">
+      <p class="control">
+        <input class="input" type="email" placeholder="Email">
+      </p>
+    </div>
+    <div class="field">
+      <p class="control">
+        <input class="input" type="password" placeholder="Password">
+      </p>
+    </div>
+    <div class="field login-container">
+      <button class="button is-info login-button" [ngClass]="{'is-loading': isLoading}">Login</button>
+      <a class="is-link">Create an account</a>
+      <a class="is-link">Forgot password?</a>
+    </div>
+  </div>
+</div>
