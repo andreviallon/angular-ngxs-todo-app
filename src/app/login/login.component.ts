@@ -9,4 +9,8 @@ export class LoginComponent {
 
   public isLoading = false;
 
+  public login(email, password) {
+    console.log('login', email, password);
+  }
+
 }

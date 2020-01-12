@@ -3,16 +3,16 @@
     <h3 class="title is-3">Login</h3>
     <div class="field">
       <p class="control">
-        <input class="input" type="email" placeholder="Email">
+        <input #email class="input" type="email" placeholder="Email">
       </p>
     </div>
     <div class="field">
       <p class="control">
-        <input class="input" type="password" placeholder="Password">
+        <input #password class="input" type="password" placeholder="Password">
       </p>
     </div>
     <div class="field login-container">
-      <button class="button is-info login-button" [ngClass]="{'is-loading': isLoading}">Login</button>
+      <button class="button is-info login-button" [ngClass]="{'is-loading': isLoading}" (click)="login(email.value, password.value)">Login</button>
       <a class="is-link">Create an account</a>
       <a class="is-link">Forgot password?</a>
     </div>
