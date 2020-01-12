@@ -1,3 +1,5 @@
+import { InitState } from './../actions/todo.actions';
+import { TodoService } from './../todo.service';
 import { State, Action, StateContext, Selector } from '@ngxs/store';;
 import { Todo } from './../models/todo.model';
 import { AddTodo, RemoveTodo, CheckTodo } from '../actions/todo.actions';
@@ -7,30 +9,25 @@ export class TodoStateModel {
 }
 
 @State<TodoStateModel>({
-  name: 'todos',
-  defaults: {
-    todos: [
-      {
-        name: 'Todo 1',
-        checked: false
-      },
-      {
-        name: 'Todo 2',
-        checked: true
-      },
-      {
-        name: 'Todo 3',
-        checked: false
-      }
-    ]
-  }
+  name: 'todos'
 })
 
 export class TodoState {
 
+  constructor(private todoService: TodoService) { }
+
   @Selector()
   static getTodos(state: TodoStateModel) {
     return state.todos;
+  }
+
+  @Action(InitState)
+  initState({ patchState }: StateContext<TodoStateModel>, { }: InitState) {
+    const todos = this.todoService.getTodos();
+
+    patchState({
+      todos: todos
+    })
   }
 
   @Action(AddTodo)

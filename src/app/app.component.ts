@@ -1,23 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { TodoState } from './state/todo.state';
 import { Todo } from './models/todo.model';
-import { AddTodo, RemoveTodo, CheckTodo } from './actions/todo.actions';
+import { AddTodo, RemoveTodo, CheckTodo, InitState } from './actions/todo.actions';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   @Select(TodoState.getTodos) todos$: Observable<Todo>
 
   constructor(private store: Store) { }
 
-  onAddTodo(todo: Todo): void {
-    this.store.dispatch(new AddTodo({ name: todo.name, checked: false }))
+  ngOnInit(): void {
+    this.store.dispatch(new InitState())
+  }
+
+  onAddTodo(todo: string): void {
+    this.store.dispatch(new AddTodo({ name: todo, checked: false }))
   }
 
   onCheckTodo(i: number): void {

@@ -1,5 +1,9 @@
 import { Todo } from '../models/todo.model';
 
+export class InitState {
+  static readonly type = '[TODO] InitState'
+}
+
 export class AddTodo {
   static readonly type = '[TODO] Add'
 
