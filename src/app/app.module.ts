@@ -15,6 +15,7 @@ import { AddTodoComponent } from './add-todo/add-todo.component';
 import { LoginComponent } from './login/login.component';
 import { TodosComponent } from './todos/todos.component';
 import { HeaderComponent } from './header/header.component';
+import { CompletedTodosComponent } from './completed-todos/completed-todos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
     AddTodoComponent,
     LoginComponent,
     TodosComponent,
-    HeaderComponent
+    HeaderComponent,
+    CompletedTodosComponent
   ],
   imports: [
     BrowserModule,

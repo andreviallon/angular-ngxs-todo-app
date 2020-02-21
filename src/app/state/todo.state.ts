@@ -21,6 +21,11 @@ export class TodoState {
     return state.todos;
   }
 
+  @Selector()
+  static getCompletedTodos(state: TodoStateModel) {
+    return state.todos.filter(todo => { todo.checked })
+  }
+
   @Action(InitState)
   initState({ patchState }: StateContext<TodoStateModel>, { }: InitState) {
     const todos = this.todoService.getTodos();

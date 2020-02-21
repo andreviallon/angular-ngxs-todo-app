@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Todo } from './../models/todo.model'
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,7 @@ export class TodosListComponent {
 
   @ViewChild('checked', { static: false }) checked: ElementRef;
 
-  @Input() todos$: Observable<Todo>
+  @Input() todos$: Observable<Todo[]>
 
   @Output() onRemoveTodo = new EventEmitter<number>();
   @Output() onCheckTodo = new EventEmitter<number>();

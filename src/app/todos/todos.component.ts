@@ -12,7 +12,6 @@ import { AddTodo, RemoveTodo, CheckTodo, InitState } from '../actions/todo.actio
 })
 export class TodosComponent implements OnInit {
 
-
   @Select(TodoState.getTodos) todos$: Observable<Todo>
 
   constructor(private store: Store) { }

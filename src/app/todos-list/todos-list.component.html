@@ -2,6 +2,7 @@
   <div class="table-container">
 
     <table *ngIf="(todos$ | async).length" class="table is-fullwidth">
+      {{ todos.name }}
       <thead>
         <tr>
           <th class="column is-four-fifth">Todo</th>
@@ -26,6 +27,5 @@
     </table>
 
     <h2 *ngIf="!(todos$ | async).length">You're all caught up!</h2>
-
   </div>
 </div>
