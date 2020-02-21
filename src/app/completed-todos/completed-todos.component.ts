@@ -11,12 +11,12 @@ import { TodoState } from '../state/todo.state';
 })
 export class CompletedTodosComponent {
 
-  @Select(TodoState.getCompletedTodos) complitedTodos$: Observable<Todo>
+  @Select(TodoState.getCompletedTodos) complitedTodos$: Observable<Todo>;
 
   constructor(private store: Store) { }
 
   ngOnInit(): void {
-    this.store.dispatch(new InitState())
+    this.store.dispatch(new InitState());
   }
 
 }

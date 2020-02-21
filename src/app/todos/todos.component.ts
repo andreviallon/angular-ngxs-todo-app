@@ -12,16 +12,16 @@ import { AddTodo, RemoveTodo, CheckTodo, InitState } from '../actions/todo.actio
 })
 export class TodosComponent implements OnInit {
 
-  @Select(TodoState.getTodos) todos$: Observable<Todo>
+  @Select(TodoState.getTodos) todos$: Observable<Todo>;
 
   constructor(private store: Store) { }
 
   ngOnInit(): void {
-    this.store.dispatch(new InitState())
+    this.store.dispatch(new InitState());
   }
 
   onAddTodo(todo: string): void {
-    this.store.dispatch(new AddTodo({ name: todo, checked: false }))
+    this.store.dispatch(new AddTodo({ name: todo, checked: false }));
   }
 
   onCheckTodo(i: number): void {

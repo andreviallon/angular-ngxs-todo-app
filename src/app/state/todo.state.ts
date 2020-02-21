@@ -23,7 +23,7 @@ export class TodoState {
 
   @Selector()
   static getCompletedTodos(state: TodoStateModel) {
-    return state.todos.filter(todo => { todo.checked })
+    return state.todos.filter(todo => todo.checked);
   }
 
   @Action(InitState)

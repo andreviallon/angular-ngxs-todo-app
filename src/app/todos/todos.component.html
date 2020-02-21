@@ -1,2 +1,2 @@
 <add-todo (onAddTodo)="onAddTodo($event)"></add-todo>
-<todos-list [todos$]="todos$" (onCheckTodo)="onCheckTodo($event)" (onRemoveTodo)="onRemoveTodo($event)"></todos-list>
+<todos-list [title]="'Todos'" [todos$]="todos$" (onCheckTodo)="onCheckTodo($event)" (onRemoveTodo)="onRemoveTodo($event)"></todos-list>
