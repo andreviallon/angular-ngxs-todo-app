@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { TodosComponent } from './todos/todos.component';
 import { HeaderComponent } from './header/header.component';
 import { CompletedTodosComponent } from './completed-todos/completed-todos.component';
+import { ActiveTodosComponent } from './active-todos/active-todos.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CompletedTodosComponent } from './completed-todos/completed-todos.compo
     LoginComponent,
     TodosComponent,
     HeaderComponent,
-    CompletedTodosComponent
+    CompletedTodosComponent,
+    ActiveTodosComponent
   ],
   imports: [
     BrowserModule,
