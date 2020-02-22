@@ -7,6 +7,7 @@ import { Todo } from './models/todo.model';
 export class TodoService {
 
   getTodos(): Todo[] {
+    console.log('todo service');
     return [
       { name: 'Todo 1', checked: false },
       { name: 'Todo 2', checked: true },

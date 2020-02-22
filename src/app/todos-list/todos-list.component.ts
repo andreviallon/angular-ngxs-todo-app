@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Todo } from './../models/todo.model'
 import { Observable } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   templateUrl: './todos-list.component.html',
   styleUrls: ['./todos-list.component.scss']
 })
-export class TodosListComponent implements OnInit {
+export class TodosListComponent {
 
   @ViewChild('checked', { static: false }) checked: ElementRef;
 
@@ -16,12 +16,6 @@ export class TodosListComponent implements OnInit {
 
   @Output() onRemoveTodo = new EventEmitter<number>();
   @Output() onCheckTodo = new EventEmitter<number>();
-
-  ngOnInit() {
-    this.todos$.subscribe(todos => {
-      console.log('todos', todos);
-    });
-  }
 
   checkTodo(i: number) {
     this.onCheckTodo.emit(i);
