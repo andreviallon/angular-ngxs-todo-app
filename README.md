@@ -5,10 +5,11 @@ An Angular "to-do list" application.
 ## What I Learned
 
 * Angular
-* NGXS (State Management)
+* State Management with NGXS
+* Working with Observables
 * Routing
-* Storybook (For developing reusable UI components)
-* Bulma (CSS Framework)
+* Using Storybook for developing reusable UI components
+* The CSS Framework Bulma
 
 ## Use Case Senarios
 The uers should be able to...
