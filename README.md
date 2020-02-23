@@ -7,9 +7,8 @@ An Angular "to-do list" application.
 * Angular
 * NGXS (State Management)
 * Routing
-* Storybook
-* Implemented functinality to the UI: onCreate, onAddItem, setupListViewListener, readItems, & writeItems.
-* Integrated setOnItemLongClickListener to remove items from the list.
+* Storybook (For developing reusable UI components)
+* Bulma (CSS Framework)
 
 ## Use Case Senarios
 The uers should be able to...
