@@ -9,11 +9,15 @@ An Angular "to-do list" application.
 * Working with Observables
 * Routing
 * Using Storybook for developing reusable UI components
+* Firebase (for storing data)
+* Authentication
+* Host the application with Heroku
 * The CSS Framework Bulma
 
 ## Use Case Senarios
 The uers should be able to...
 
+* Create an account
 * Add todos to a list
 * Check the todos they have completed
 * Remove a todo
