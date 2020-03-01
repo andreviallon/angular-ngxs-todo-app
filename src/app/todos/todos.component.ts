@@ -21,7 +21,7 @@ export class TodosComponent implements OnInit {
   }
 
   onAddTodo(todo: string): void {
-    this.store.dispatch(new AddTodo({ name: todo, checked: false }));
+    this.store.dispatch(new AddTodo({ id: undefined, name: todo, checked: false }));
   }
 
   onCheckTodo(i: number): void {

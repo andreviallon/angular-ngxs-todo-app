@@ -33,7 +33,16 @@ export class TodoState {
 
   @Action(InitState)
   initState({ patchState }: StateContext<TodoStateModel>, { }: InitState) {
-    const todos = this.todoService.getTodos();
+    let todos: Todo[];
+
+    this.todoService.getTodos().subscribe({
+      next(todos) {
+        console.log('get todos: ', todos);
+        todos = todos
+      }
+    });
+
+    console.log('todos', todos);
 
     patchState({
       todos: todos

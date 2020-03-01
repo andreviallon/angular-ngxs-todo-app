@@ -18,6 +18,12 @@ import { HeaderComponent } from './header/header.component';
 import { CompletedTodosComponent } from './completed-todos/completed-todos.component';
 import { ActiveTodosComponent } from './active-todos/active-todos.component';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +37,8 @@ import { ActiveTodosComponent } from './active-todos/active-todos.component';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angularfs'),
+    AngularFirestoreModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
     NgxsModule.forRoot([
