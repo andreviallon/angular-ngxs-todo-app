@@ -6,7 +6,6 @@ import { CompletedTodosComponent } from './completed-todos/completed-todos.compo
 
 export const appRoutes: Routes = [
   { path: '', component: TodosComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'active', component: ActiveTodosComponent },
   { path: 'completed', component: CompletedTodosComponent },
   { path: '', redirectTo: '/todos', pathMatch: 'full' }
