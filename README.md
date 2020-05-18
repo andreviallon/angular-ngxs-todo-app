@@ -1,4 +1,4 @@
-# To Do List
+# Angular & NGXSTo Do List
 
 An Angular "to-do list" application.
 
@@ -20,8 +20,3 @@ The uers should be able to...
 * Remove a todo
 * See a list with all the 'Active' todos
 * See a list with all the 'Completed' todos
-
-## What to do next
-* Firebase (for storing data)
-* Authentication
-* Hosting the application
