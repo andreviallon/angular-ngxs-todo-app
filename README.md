@@ -14,7 +14,6 @@ An Angular "to-do list" application.
 ## Use Case Senarios
 The uers should be able to...
 
-* Create an account
 * Add todos to a list
 * Check the todos they have completed
 * Remove a todo
